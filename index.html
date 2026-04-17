@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Irin Sultana Nila | Neuroscientist & Anti-Aging Researcher</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink: #0d1117;
+    --ink-mid: #1a2030;
+    --ink-light: #374151;
+    --paper: #f6f7f9;
+    --paper-dark: #eaecf0;
+    --rose: #8b3a62;
+    --rose-light: #b0527e;
+    --sage: #2a6e5e;
+    --sage-light: #3a9278;
+    --rule: rgba(13,17,23,0.11);
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'DM Sans', system-ui, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; font-size: 16px; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(246,247,249,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--rule);
+    padding: 0 clamp(1.5rem, 5vw, 4rem);
+    height: 56px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--sage); }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 56px;
+  }
+  .hero-left {
+    background: var(--ink-mid);
+    display: flex; flex-direction: column; justify-content: center;
+    padding: clamp(3rem, 8vw, 7rem) clamp(2rem, 5vw, 5rem);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-left::before {
+    content: '';
+    position: absolute; bottom: -80px; right: -80px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    border: 1px solid rgba(139,58,98,0.18);
+  }
+  .hero-left::after {
+    content: '';
+    position: absolute; top: 50px; left: -60px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    border: 1px solid rgba(42,110,94,0.2);
+  }
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--rose-light);
+    margin-bottom: 1.2rem;
+  }
+  .hero-name {
+    font-family: var(--serif);
+    font-size: clamp(2.8rem, 5vw, 4.4rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: #f6f7f9;
+    margin-bottom: 0.5rem;
+  }
+  .hero-name span {
+    display: block;
+    font-style: italic;
+    font-weight: 400;
+    color: rgba(246,247,249,0.55);
+  }
+  .hero-title {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    font-weight: 300;
+    color: rgba(246,247,249,0.65);
+    margin-top: 1.2rem;
+    margin-bottom: 2.5rem;
+    border-left: 2px solid var(--rose);
+    padding-left: 1rem;
+    line-height: 1.55;
+  }
+  .hero-contacts { display: flex; flex-direction: column; gap: 0.65rem; }
+  .hero-contact-item {
+    display: flex; align-items: center; gap: 0.75rem;
+    font-size: 0.82rem;
+    color: rgba(246,247,249,0.5);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .hero-contact-item:hover { color: var(--sage-light); }
+  .contact-icon {
+    width: 28px; height: 28px; border-radius: 50%;
+    border: 1px solid rgba(246,247,249,0.12);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .contact-icon svg { width: 13px; height: 13px; fill: none; stroke: currentColor; stroke-width: 1.5; }
+
+  .hero-right {
+    background: #12161f;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: clamp(3rem, 8vw, 7rem) clamp(2rem, 5vw, 5rem);
+  }
+  .hero-right-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sage-light);
+    margin-bottom: 1.5rem;
+  }
+  .research-tag {
+    display: inline-block;
+    background: rgba(246,247,249,0.05);
+    border: 1px solid rgba(246,247,249,0.09);
+    border-radius: 2px;
+    padding: 0.4rem 0.9rem;
+    font-size: 0.8rem;
+    color: rgba(246,247,249,0.6);
+    margin: 0.25rem 0.25rem 0.25rem 0;
+    font-family: var(--serif);
+    font-style: italic;
+  }
+  .hero-stat-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    margin-top: 2.5rem;
+    border: 1px solid rgba(246,247,249,0.07);
+  }
+  .hero-stat {
+    padding: 1.2rem 1.5rem;
+    background: rgba(246,247,249,0.025);
+  }
+  .hero-stat-n {
+    font-family: var(--serif);
+    font-size: 2rem;
+    font-weight: 300;
+    color: #f6f7f9;
+    line-height: 1;
+  }
+  .hero-stat-label {
+    font-size: 0.72rem;
+    color: rgba(246,247,249,0.38);
+    margin-top: 0.3rem;
+    letter-spacing: 0.04em;
+  }
+
+  /* ── SHARED SECTION LAYOUT ── */
+  section { padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 5vw, 4rem); }
+  .section-inner { max-width: 1080px; margin: 0 auto; }
+  .section-label {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--rose);
+    margin-bottom: 0.6rem;
+  }
+  .section-heading {
+    font-family: var(--serif);
+    font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 2.5rem;
+  }
+  .section-rule {
+    width: 48px; height: 1px;
+    background: var(--rose);
+    margin-bottom: 2.5rem;
+  }
+
+  /* ── ABOUT ── */
+  #about { background: var(--paper); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 5rem; align-items: start; }
+  .about-body { font-family: var(--serif); font-size: 1.12rem; color: var(--ink-light); line-height: 1.85; }
+  .about-body p + p { margin-top: 1.2rem; }
+  .lang-list { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1.5rem; }
+  .lang-item { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; }
+  .lang-name { font-size: 0.85rem; font-weight: 500; color: var(--ink); min-width: 60px; }
+  .lang-bar-wrap { flex: 1; height: 2px; background: var(--rule); border-radius: 2px; }
+  .lang-bar { height: 100%; background: var(--sage); border-radius: 2px; }
+  .lang-level { font-size: 0.75rem; color: var(--ink-light); min-width: 80px; text-align: right; }
+
+  /* ── EXPERIENCE / EDUCATION ── */
+  #experience { background: var(--paper-dark); }
+  #education { background: var(--paper); }
+  .timeline { display: flex; flex-direction: column; }
+  .timeline-item {
+    display: grid; grid-template-columns: 160px 1fr;
+    gap: 2rem;
+    padding: 1.8rem 0;
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute; left: 153px; top: 2.3rem;
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--paper-dark);
+    border: 1.5px solid var(--rose);
+  }
+  #education .timeline-item::before { background: var(--paper); border-color: var(--sage); }
+  .timeline-date {
+    font-size: 0.78rem;
+    color: var(--ink-light);
+    padding-top: 0.3rem;
+    line-height: 1.5;
+  }
+  .timeline-degree {
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+  .timeline-inst {
+    font-size: 0.85rem;
+    color: var(--sage);
+    margin-top: 0.25rem;
+    font-weight: 500;
+  }
+  .timeline-thesis {
+    font-size: 0.82rem;
+    color: var(--ink-light);
+    margin-top: 0.5rem;
+    font-style: italic;
+    line-height: 1.6;
+  }
+  .timeline-cgpa {
+    display: inline-block;
+    background: rgba(42,110,94,0.08);
+    color: var(--sage);
+    font-size: 0.76rem;
+    font-weight: 500;
+    padding: 0.2rem 0.7rem;
+    border-radius: 2px;
+    margin-top: 0.6rem;
+  }
+  .timeline-bullets { margin-top: 0.6rem; padding-left: 1rem; }
+  .timeline-bullets li {
+    font-size: 0.82rem;
+    color: var(--ink-light);
+    margin-top: 0.3rem;
+    line-height: 1.55;
+  }
+
+  /* ── RESEARCH PROJECTS ── */
+  #projects { background: var(--paper-dark); }
+  .project-grid { display: flex; flex-direction: column; gap: 0; }
+  .project-item {
+    padding: 1.5rem 0 1.5rem 1.5rem;
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+  }
+  .project-item::before {
+    content: '';
+    position: absolute; left: 0; top: 1.9rem;
+    width: 4px; height: 30px;
+    background: var(--rose);
+  }
+  .project-type {
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--rose);
+    margin-bottom: 0.3rem;
+  }
+  .project-title {
+    font-family: var(--serif);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.45;
+    margin-bottom: 0.35rem;
+  }
+  .project-desc {
+    font-size: 0.82rem;
+    color: var(--ink-light);
+    line-height: 1.6;
+  }
+
+  /* ── SKILLS ── */
+  #skills { background: var(--ink-mid); }
+  #skills .section-heading { color: #f6f7f9; }
+  #skills .section-label { color: var(--rose-light); }
+  .skills-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+  .skills-col-title {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--sage-light);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(246,247,249,0.08);
+  }
+  .skills-list { display: flex; flex-direction: column; gap: 0.4rem; }
+  .skill-item {
+    display: flex; align-items: center; gap: 0.7rem;
+    font-size: 0.82rem;
+    color: rgba(246,247,249,0.6);
+    padding: 0.5rem 0.8rem;
+    border-bottom: 1px solid rgba(246,247,249,0.04);
+    transition: color 0.2s;
+  }
+  .skill-item::before {
+    content: '';
+    width: 4px; height: 4px; border-radius: 50%;
+    background: var(--rose-light);
+    flex-shrink: 0;
+  }
+  .skill-item:hover { color: rgba(246,247,249,0.9); }
+
+  /* ── PUBLICATIONS ── */
+  #publications { background: var(--paper); }
+  .pub-list { display: flex; flex-direction: column; }
+  .pub-item {
+    padding: 1.8rem 0 1.8rem 1.5rem;
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+  }
+  .pub-item::before {
+    content: '';
+    position: absolute; left: 0; top: 2.3rem;
+    width: 4px; height: 36px;
+    background: var(--rose);
+  }
+  .pub-year {
+    font-size: 0.72rem; letter-spacing: 0.1em;
+    color: var(--rose);
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+  .pub-title {
+    font-family: var(--serif);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.45;
+    margin-bottom: 0.4rem;
+  }
+  .pub-authors {
+    font-size: 0.8rem;
+    color: var(--ink-light);
+    line-height: 1.6;
+  }
+  .pub-authors strong { color: var(--sage); font-weight: 500; }
+  .pub-journal {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: var(--rose);
+    margin-top: 0.3rem;
+  }
+  .pub-if {
+    display: inline-block;
+    background: rgba(139,58,98,0.08);
+    color: var(--rose);
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0.15rem 0.6rem;
+    border-radius: 2px;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+  }
+  .pub-status {
+    display: inline-block;
+    background: rgba(42,110,94,0.08);
+    color: var(--sage);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.65rem;
+    border-radius: 2px;
+    margin-bottom: 0.5rem;
+  }
+
+  /* ── AWARDS ── */
+  #awards { background: var(--paper-dark); }
+  .awards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+  .award-card {
+    border: 1px solid var(--rule);
+    padding: 1.5rem;
+    background: var(--paper);
+    position: relative;
+    overflow: hidden;
+  }
+  .award-card::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0;
+    width: 48px; height: 2px;
+    background: var(--rose);
+  }
+  .award-year {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--rose);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  .award-title {
+    font-family: var(--serif);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
+    line-height: 1.4;
+  }
+  .award-org {
+    font-size: 0.8rem;
+    color: var(--sage);
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+  /* ── REFERENCES ── */
+  #references { background: var(--ink); }
+  #references .section-heading { color: #f6f7f9; }
+  #references .section-label { color: var(--rose-light); }
+  .ref-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.2rem; }
+  .ref-card {
+    background: rgba(246,247,249,0.03);
+    border: 1px solid rgba(246,247,249,0.07);
+    padding: 1.5rem;
+    border-radius: 2px;
+  }
+  .ref-avatar {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: rgba(139,58,98,0.15);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--rose-light);
+    margin-bottom: 1rem;
+  }
+  .ref-name {
+    font-family: var(--serif);
+    font-size: 1rem;
+    font-weight: 600;
+    color: #f6f7f9;
+    margin-bottom: 0.2rem;
+  }
+  .ref-role {
+    font-size: 0.78rem;
+    color: rgba(246,247,249,0.42);
+    margin-bottom: 0.6rem;
+    line-height: 1.55;
+  }
+  .ref-affil {
+    font-size: 0.75rem;
+    color: rgba(246,247,249,0.28);
+    font-style: italic;
+    margin-bottom: 0.7rem;
+    line-height: 1.4;
+  }
+  .ref-contact { display: flex; flex-direction: column; gap: 0.3rem; }
+  .ref-email {
+    font-size: 0.77rem;
+    color: var(--sage-light);
+    text-decoration: none;
+    word-break: break-all;
+  }
+  .ref-email:hover { color: var(--rose-light); }
+  .ref-phone { font-size: 0.77rem; color: rgba(246,247,249,0.3); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    padding: 2rem clamp(1.5rem, 5vw, 4rem);
+    text-align: center;
+    font-size: 0.78rem;
+    color: rgba(246,247,249,0.22);
+    border-top: 1px solid rgba(246,247,249,0.05);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 768px) {
+    #hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .timeline-item { grid-template-columns: 1fr; gap: 0.3rem; }
+    .timeline-item::before { display: none; }
+    .skills-cols { grid-template-columns: 1fr; gap: 2rem; }
+    nav .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">Irin Sultana Nila</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#projects">Research</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#awards">Awards</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Post-Doctoral Researcher &bull; JBI Scientific Writer</div>
+    <h1 class="hero-name">
+      Irin Sultana
+      <span>Nila</span>
+    </h1>
+    <p class="hero-title">
+      Ph.D. in Anti-aging Molecular Biology<br>
+      Biological Clock &amp; Aging Laboratory, Inje University, Korea
+    </p>
+    <div class="hero-contacts">
+      <a class="hero-contact-item" href="mailto:nila.neurobiology@gmail.com">
+        <span class="contact-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+        </span>
+        nila.neurobiology@gmail.com
+      </a>
+      <span class="hero-contact-item">
+        <span class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.5 12 19.79 19.79 0 0 1 1.15 3.18 2 2 0 0 1 3.12 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 15.9l.02 1.02z"/></svg>
+        </span>
+        +82 010-9128-1991
+      </span>
+      <span class="hero-contact-item">
+        <span class="contact-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </span>
+        Gimhae, South Korea
+      </span>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-right-label">Research Focus</div>
+    <div>
+      <span class="research-tag">Neurodegenerative Diseases</span>
+      <span class="research-tag">Parkinson's Disease</span>
+      <span class="research-tag">Exosome Biology</span>
+      <span class="research-tag">Drug Delivery</span>
+      <span class="research-tag">Anti-aging Biology</span>
+      <span class="research-tag">Biomarker Discovery</span>
+      <span class="research-tag">Systematic Reviews</span>
+      <span class="research-tag">Meta-analysis</span>
+    </div>
+    <div class="hero-stat-grid">
+      <div class="hero-stat">
+        <div class="hero-stat-n">6</div>
+        <div class="hero-stat-label">Peer-reviewed publications</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-n">2</div>
+        <div class="hero-stat-label">Manuscripts under review</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-n">4.21</div>
+        <div class="hero-stat-label">Ph.D. GPA (out of 4.50)</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-n">GKS</div>
+        <div class="hero-stat-label">Government scholarship awardee</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div>
+        <div class="section-label">Profile</div>
+        <h2 class="section-heading">About Me</h2>
+        <div class="section-rule"></div>
+        <div style="font-size:0.8rem;font-weight:500;color:var(--ink-light);letter-spacing:0.04em;margin-bottom:0.8rem;">Languages</div>
+        <div class="lang-list">
+          <div class="lang-item">
+            <span class="lang-name">English</span>
+            <div class="lang-bar-wrap"><div class="lang-bar" style="width:85%"></div></div>
+            <span class="lang-level">Fluent</span>
+          </div>
+          <div class="lang-item">
+            <span class="lang-name">Korean</span>
+            <div class="lang-bar-wrap"><div class="lang-bar" style="width:50%"></div></div>
+            <span class="lang-level">Intermediate (TOPIK 3)</span>
+          </div>
+          <div class="lang-item">
+            <span class="lang-name">Bengali</span>
+            <div class="lang-bar-wrap"><div class="lang-bar" style="width:100%"></div></div>
+            <span class="lang-level">Native</span>
+          </div>
+        </div>
+        <div style="margin-top:2rem;padding:1.2rem;border-left:2px solid var(--rose);background:rgba(139,58,98,0.04);">
+          <div style="font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--rose);font-weight:500;margin-bottom:0.4rem;">Personal</div>
+          <div style="font-size:0.85rem;color:var(--ink);line-height:1.8;">
+            Bangladeshi &nbsp;&bull;&nbsp; Gimhae, South Korea<br>
+            Date of Birth: 9 February 1991
+          </div>
+        </div>
+      </div>
+      <div class="about-body">
+        <p>I am a neuroscientist specializing in the molecular biology of neurodegeneration and aging, with a focus on Parkinson's disease. My doctoral research at Inje University's Biological Clock and Aging Laboratory centered on developing an early diagnostic platform and smart drug delivery system based on alpha-synuclein-enriched exosomal biomarkers.</p>
+        <p>As a recipient of the Global Korea Scholarship — the South Korean government's most prestigious award for international graduate students — I have spent years at the intersection of wet-lab discovery and evidence-based medicine. My work spans in vitro and in vivo experimentation, systematic reviews, and meta-analyses, reflecting a commitment to translational science.</p>
+        <p>Currently, I contribute both as a researcher and as a Scientific Writer at the Joanna Briggs Institute, University of Adelaide, where I synthesize evidence to support clinical practice guidelines. I am passionate about bridging laboratory findings and clinical knowledge to ultimately improve outcomes for patients with neurodegenerative disorders.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="section-label">Career</div>
+    <h2 class="section-heading">Job Experience</h2>
+    <div class="section-rule"></div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">Sep 2023 &ndash; Jun 2024</div>
+        <div>
+          <div class="timeline-degree">Senior Researcher</div>
+          <div class="timeline-inst">Biological Clock and Aging Laboratory, Inje University, Korea</div>
+          <ul class="timeline-bullets">
+            <li>Investigated the potential of Irisin (a Myokine) as a biomarker for neurodegenerative disorders.</li>
+            <li>Managed project planning and execution; collaborated on publication workflows.</li>
+            <li>Mentored Master's and Ph.D. students in laboratory techniques and research methodology.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-inner">
+    <div class="section-label">Academic</div>
+    <h2 class="section-heading">Education</h2>
+    <div class="section-rule" style="background:var(--sage)"></div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">Sep 2020 &ndash; Aug 2023</div>
+        <div>
+          <div class="timeline-degree">Doctor of Philosophy &mdash; Anti-aging Molecular Biology</div>
+          <div class="timeline-inst">Biological Clock and Aging Laboratory, Inje University, Korea</div>
+          <div class="timeline-thesis">Thesis: Development of early diagnosis and smart drug delivery system based on an alpha-synuclein enriched exosome specific biomarker in Parkinson's disease</div>
+          <span class="timeline-cgpa">CGPA 4.21 / 4.50</span>
+          <span class="timeline-cgpa" style="background:rgba(139,58,98,0.08);color:var(--rose);margin-left:0.4rem;">GKS Scholarship</span>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Sep 2019 &ndash; Aug 2020</div>
+        <div>
+          <div class="timeline-degree">Korean Language Program</div>
+          <div class="timeline-inst">Duksung Women's University, Seoul, South Korea</div>
+          <div class="timeline-thesis">Required course for GKS scholars. Duration: 1 year.</div>
+          <span class="timeline-cgpa">TOPIK Level 3 (Intermediate)</span>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Jun 2014 &ndash; Jun 2017</div>
+        <div>
+          <div class="timeline-degree">Master of Science &mdash; Genetics and Plant Breeding</div>
+          <div class="timeline-inst">Bangabandhu Sheikh Mujibur Rahman Agricultural University, Bangladesh</div>
+          <div class="timeline-thesis">Thesis: Genetic polymorphism in Rice through microsatellite markers</div>
+          <span class="timeline-cgpa">CGPA 3.59 / 4.00</span>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">May 2010 &ndash; Apr 2014</div>
+        <div>
+          <div class="timeline-degree">Bachelor of Science &mdash; Agriculture</div>
+          <div class="timeline-inst">Bangabandhu Sheikh Mujibur Rahman Agricultural University, Bangladesh</div>
+          <span class="timeline-cgpa">CGPA 3.50 / 4.00</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH PROJECTS -->
+<section id="projects">
+  <div class="section-inner">
+    <div class="section-label">Research</div>
+    <h2 class="section-heading">Research Projects</h2>
+    <div class="section-rule"></div>
+    <div class="project-grid">
+      <div class="project-item">
+        <div class="project-type">Independent</div>
+        <div class="project-title">Exosome-mediated drug delivery in Parkinson's disease</div>
+        <div class="project-desc">Investigated exosome-mediated delivery of therapeutic drugs both in vitro and in vivo to enhance treatment outcomes for Parkinson's disease.</div>
+      </div>
+      <div class="project-item">
+        <div class="project-type">Independent</div>
+        <div class="project-title">Efficacy of differential exercise in Parkinson's disease</div>
+        <div class="project-desc">Evaluated the impact of differential exercise regimens on disease progression in a mouse model; analyzed brain tissue samples.</div>
+      </div>
+      <div class="project-item">
+        <div class="project-type">Independent</div>
+        <div class="project-title">Exosomal biomarkers for Parkinson's disease diagnosis</div>
+        <div class="project-desc">Conducted a meta-analysis to identify optimal exosomal biomarkers and developed a workflow for their use in exosome-based Parkinson's disease diagnosis.</div>
+      </div>
+      <div class="project-item">
+        <div class="project-type">Independent</div>
+        <div class="project-title">Efficacy of irisin in neurodegenerative diseases</div>
+        <div class="project-desc">Performed a meta-analysis to assess the effectiveness of irisin as a therapeutic agent across various neurodegenerative diseases.</div>
+      </div>
+      <div class="project-item">
+        <div class="project-type">Independent</div>
+        <div class="project-title">Impact of daily coffee consumption on Alzheimer's disease risk</div>
+        <div class="project-desc">Investigated the relationship between daily coffee consumption and Alzheimer's disease risk through systematic review and meta-analysis.</div>
+      </div>
+      <div class="project-item">
+        <div class="project-type">Collaborative</div>
+        <div class="project-title">Nose-to-brain delivery of novel dsRNA Nexavant ameliorates ischemic brain damage</div>
+        <div class="project-desc">Proteomics-based investigation of a novel dsRNA delivery route for neuroprotection in ischemic conditions.</div>
+      </div>
+      <div class="project-item">
+        <div class="project-type">Collaborative</div>
+        <div class="project-title">Quantification of neuronal cell-released hydrogen peroxide using 3D mesoporous copper-enriched Prussian blue microcubes nanozymes</div>
+        <div class="project-desc">A colorimetric approach for real-time detection with anticancer applications.</div>
+      </div>
+      <div class="project-item">
+        <div class="project-type">Collaborative</div>
+        <div class="project-title">Role of physical exercises in alleviating stroke-associated homeostatic dysregulation</div>
+        <div class="project-desc">Systematic review and meta-analysis examining exercise as an intervention for stroke recovery.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-label">Competencies</div>
+    <h2 class="section-heading">Laboratory &amp; Analytical Skills</h2>
+    <div class="section-rule" style="background:var(--rose-light)"></div>
+    <div class="skills-cols">
+      <div>
+        <div class="skills-col-title">Wet Lab</div>
+        <div class="skills-list">
+          <div class="skill-item">Cell culture techniques</div>
+          <div class="skill-item">Western blotting</div>
+          <div class="skill-item">ELISA</div>
+          <div class="skill-item">RT-PCR</div>
+          <div class="skill-item">Exosome isolation &amp; characterization</div>
+          <div class="skill-item">Nanoparticle Tracking Analysis (NTA)</div>
+          <div class="skill-item">Transmission electron microscopy (TEM)</div>
+          <div class="skill-item">Fluorescence microscopy</div>
+          <div class="skill-item">HPLC</div>
+          <div class="skill-item">Histological analysis (Golgi-cox staining)</div>
+          <div class="skill-item">Mice/Rat handling &amp; injection techniques</div>
+          <div class="skill-item">Organ &amp; blood collection</div>
+          <div class="skill-item">Behavioral testing (Open field, BBB)</div>
+          <div class="skill-item">Data analysis (GraphPad Prism, Excel)</div>
+        </div>
+      </div>
+      <div>
+        <div class="skills-col-title">Dry Lab &amp; Evidence Synthesis</div>
+        <div class="skills-list">
+          <div class="skill-item">Systematic reviews &amp; meta-analyses</div>
+          <div class="skill-item">Statistical software (Stata, RevMan, OpenMeta)</div>
+          <div class="skill-item">Literature search (PubMed, Embase, WoS)</div>
+          <div class="skill-item">Risk of bias assessment</div>
+          <div class="skill-item">Effect size calculation (RoM, SMD, HR, OR)</div>
+          <div class="skill-item">Heterogeneity &amp; subgroup analysis</div>
+          <div class="skill-item">Publication bias (funnel plots, Egger's test)</div>
+          <div class="skill-item">Sensitivity analysis (leave-one-out)</div>
+          <div class="skill-item">Reference management (Rayyan, Mendeley, EndNote)</div>
+          <div class="skill-item">PROSPERO registration protocols</div>
+          <div class="skill-item">PRISMA compliance</div>
+          <div class="skill-item">Programming in R</div>
+          <div class="skill-item">Academic writing</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <div class="section-inner">
+    <div class="section-label">Research Output</div>
+    <h2 class="section-heading">Publications</h2>
+    <div class="section-rule"></div>
+    <div class="pub-list">
+
+      <div class="pub-item">
+        <div class="pub-year">2024</div>
+        <div class="pub-title">Elucidating the role of physical exercises in alleviating stroke-associated homeostatic dysregulation: a systematic review and meta-analysis.</div>
+        <div class="pub-authors">Moran VMV, <strong>Nila IS</strong>, Madhuvilakku R, Sumsuzzman DM, Khan ZA, &amp; Hong Y.</div>
+        <div class="pub-journal">BMJ Open Sport &amp; Exercise Medicine, 10(4). <span class="pub-if">IF 3.9</span></div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-year">2024</div>
+        <div class="pub-title">Effects of Botulinum Toxin-A for Spasticity and Nociceptive Pain in Individuals with Spinal Cord Injury: A Systematic Review and Meta-Analysis.</div>
+        <div class="pub-authors">Sumsuzzman DM, Khan ZA, <strong>Nila IS</strong>, Moran VMV, Rajesh M, Yang WJ, &amp; Hong Y.</div>
+        <div class="pub-journal">Annals of Rehabilitation Medicine, 48(3), 192–202. <span class="pub-if">IF 2.1</span></div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-year">2023</div>
+        <div class="pub-title">Quantification of neuronal cell-released hydrogen peroxide using 3D mesoporous copper-enriched Prussian blue microcubes nanozymes: a colorimetric approach in real time and anticancer effect.</div>
+        <div class="pub-authors">Madhuvilakku R, Hong Y, <strong>Nila IS</strong>, Villagra Moran VM, Subramanian P, Khan ZA, Jeong S, &amp; You SG.</div>
+        <div class="pub-journal">ACS Applied Materials &amp; Interfaces, 15(48), 55466–55485. <span class="pub-if">IF 9.5</span></div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-year">2023</div>
+        <div class="pub-title">Effect of Daily Coffee Consumption on the Risk of Alzheimer's Disease: A Systematic Review and Meta-Analysis.</div>
+        <div class="pub-authors"><strong>Nila IS</strong>, Moran VMV, Khan ZA, &amp; Hong Y.</div>
+        <div class="pub-journal">Journal of Lifestyle Medicine, 13(2), 83.</div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-year">2022</div>
+        <div class="pub-title">Identification of exosomal biomarkers and its optimal isolation and detection method for the diagnosis of Parkinson's disease: A systematic review and meta-analysis.</div>
+        <div class="pub-authors"><strong>Nila IS</strong>, Sumsuzzman DM, Khan ZA, Jung JH, Kazema AS, Kim SJ, &amp; Hong Y.</div>
+        <div class="pub-journal">Ageing Research Reviews, 82, 101764. <span class="pub-if">IF 11.78</span></div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-year">2018</div>
+        <div class="pub-title">Effect of polyamine on pigmentation, reactive oxidative species and antioxidant under drought in maize (Zea mays L.).</div>
+        <div class="pub-authors">Akter S, Rasul MG, Zakaria M, Sarker MM, <strong>Nila IS</strong>, Dutta S, Haque MM, &amp; Rohman MM.</div>
+        <div class="pub-journal">Turkish Journal of Agriculture-Food Science and Technology, 6(7), 799–811.</div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-status">Under Review</div>
+        <div class="pub-title">Exosome-mediated delivery of therapeutic drugs for the better treatment of Parkinson's disease.</div>
+        <div class="pub-authors"><strong>Nila IS</strong>, Jung JH, Khan ZA, Moran VM, Baek S, Akter S, Kim SJ, Hong Y.</div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-status">Under Review</div>
+        <div class="pub-title">Irisin as a potential biomarker in neurodegenerative disorders: A systematic review and meta-analysis.</div>
+        <div class="pub-authors"><strong>Nila IS</strong>, Baek S, Moran VM, Khan ZA, Leigh SJ, Hong Y.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section id="awards">
+  <div class="section-inner">
+    <div class="section-label">Achievements</div>
+    <h2 class="section-heading">Awards &amp; Conference Presentations</h2>
+    <div class="section-rule"></div>
+    <div class="awards-grid">
+      <div class="award-card">
+        <div class="award-year">2019 – 2023</div>
+        <div class="award-title">Global Korea Scholarship (GKS)</div>
+        <div class="award-org">National Institute for International Education, South Korea — The most prestigious government scholarship for international graduate students.</div>
+      </div>
+      <div class="award-card">
+        <div class="award-year">2023</div>
+        <div class="award-title">Young Scientist Award &mdash; Oral Presentation</div>
+        <div class="award-org">Korean Society of Lifestyle Medicine Conference — Endogenous exosome based smart drug delivery system for better treatment in Parkinson's disease.</div>
+      </div>
+      <div class="award-card">
+        <div class="award-year">2022</div>
+        <div class="award-title">Award for Excellent Academic Achievement</div>
+        <div class="award-org">Ministry of Education, South Korea</div>
+      </div>
+      <div class="award-card">
+        <div class="award-year">2022</div>
+        <div class="award-title">Best Poster Award</div>
+        <div class="award-org">Korean Society of Lifestyle Medicine Conference — Exosomal biomarkers and their optimum isolation and detection method for Parkinson's disease diagnosis.</div>
+      </div>
+      <div class="award-card">
+        <div class="award-year">2021</div>
+        <div class="award-title">Excellent Poster Award</div>
+        <div class="award-org">Korean Society of Lifestyle Medicine Conference — Role of Exosomes in Alzheimer's Disease from Pathogenesis to Diagnosis as well as Therapeutics.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REFERENCES -->
+<section id="references">
+  <div class="section-inner">
+    <div class="section-label">References</div>
+    <h2 class="section-heading">Academic References</h2>
+    <div class="section-rule" style="background:var(--rose-light)"></div>
+    <div class="ref-grid">
+      <div class="ref-card">
+        <div class="ref-avatar">CJ</div>
+        <div class="ref-name">Choi Jeonghyun, Ph.D.</div>
+        <div class="ref-role">Assistant Professor, Department of Physiotherapy</div>
+        <div class="ref-affil">Daegu Haany University, Daegu, South Korea<br><em>Prev: BioClock &amp; Aging Lab, Inje University</em></div>
+        <div class="ref-contact">
+          <a href="mailto:jeonghyunch@dhu.ac.kr" class="ref-email">jeonghyunch@dhu.ac.kr</a>
+          <span class="ref-phone">+82-53-770-2385</span>
+        </div>
+      </div>
+      <div class="ref-card">
+        <div class="ref-avatar">ZK</div>
+        <div class="ref-name">Zeeshan Ahmad Khan, Ph.D.</div>
+        <div class="ref-role">Postdoctoral Research Fellow, Center for Translational Research in Neurodegenerative Disease</div>
+        <div class="ref-affil">University of Florida, Gainesville, FL, USA<br><em>Prev: BioClock &amp; Aging Lab, Inje University</em></div>
+        <div class="ref-contact">
+          <a href="mailto:zeeshankhan@ufl.edu" class="ref-email">zeeshankhan@ufl.edu</a>
+          <span class="ref-phone">+1 (352) 756 212</span>
+        </div>
+      </div>
+      <div class="ref-card">
+        <div class="ref-avatar">GK</div>
+        <div class="ref-name">George C. Kamenos</div>
+        <div class="ref-role">Clinical Assistant Professor</div>
+        <div class="ref-affil">Korea Institute of Energy Technology (KENTECH), Naju, South Korea<br><em>Prev: BioClock &amp; Aging Lab, Inje University</em></div>
+        <div class="ref-contact">
+          <a href="mailto:gkamenos@kentech.ac.kr" class="ref-email">gkamenos@kentech.ac.kr</a>
+          <span class="ref-phone">+82-010-6299-1085</span>
+        </div>
+      </div>
+      <div class="ref-card">
+        <div class="ref-avatar">DS</div>
+        <div class="ref-name">Dewan Md. Sumsuzzman, Ph.D.</div>
+        <div class="ref-role">Postdoctoral Research Fellow, Agent-Based Modelling Laboratory</div>
+        <div class="ref-affil">York University, Toronto, ON, Canada<br><em>Prev: BioClock &amp; Aging Lab, Inje University</em></div>
+        <div class="ref-contact">
+          <a href="mailto:dewanpavelpharm@gmail.com" class="ref-email">dewanpavelpharm@gmail.com</a>
+          <span class="ref-phone">+1 (647) 631 9711</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2025 Irin Sultana Nila &mdash; Neuroscientist &amp; Anti-aging Researcher &mdash; Gimhae, South Korea</p>
+</footer>
+
+</body>
+</html>
